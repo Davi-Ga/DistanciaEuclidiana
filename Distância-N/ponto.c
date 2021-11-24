@@ -26,13 +26,15 @@ void pto_libera(Ponto* p){
     free(p);
 }
 //Recupera, por refer�ncia, o valor de um ponto
-/*int pto_acessa(Ponto* p, float* x, float* y){
+int pto_acessa(Ponto* p, float* x, int size){
+    int i;
     if(p == NULL)
         return 0;
-    *x = p->x;
-    *y = p->y;
+        for(i=0;i<size;i++){ 
+            p->vet[i]
+        }    
     return 1;
-}*/
+}
 //Atribui a um ponto as coordenadas "x" e "y"
 int pto_atribui(Ponto* p, float *vet){
     int i;
@@ -46,12 +48,12 @@ int pto_atribui(Ponto* p, float *vet){
 }
 //Calcula a dist�ncia entre dois pontos
 float pto_distancia(Ponto* p1, Ponto* p2, int size){
+    int i;
+
     float aux =0;
-    if(p1 == NULL || p2 == NULL)
-        return -1;
-     for(int i=0;i<size;i++){
-        
-        aux+=pow(((p2->vet[i])-(p1->vet[i])),2);
+
+        for(i=0;i<size;i++){
+            aux+ = pow((p1->vet[i] - p2->vet[i+1]),2);
     }
     return sqrt(aux);
 }
